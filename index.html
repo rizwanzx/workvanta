@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="WorkVanta - Work opportunities without upfront investment. Join our Telegram community for updates and details.">
+<title>WorkVanta | Work Without Investment</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#03130d;
+    color:#f3fff9;
+    min-height:100vh;
+}
+
+.page{
+    max-width:520px;
+    margin:auto;
+    min-height:100vh;
+    padding:22px 18px 35px;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(35,220,135,.16), transparent 32%),
+        linear-gradient(180deg,#031b12 0%,#03130d 55%,#020b07 100%);
+}
+
+/* Brand */
+.brand{
+    text-align:center;
+    padding:15px 0 25px;
+}
+
+.logo{
+    width:62px;
+    height:62px;
+    margin:0 auto 16px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    background:#08291c;
+    border:1px solid rgba(45,235,145,.25);
+    box-shadow:0 0 30px rgba(32,220,130,.12);
+}
+
+.brand h1{
+    font-size:34px;
+    letter-spacing:-1px;
+    font-weight:800;
+}
+
+.brand h1 span{
+    color:#27df8a;
+}
+
+.tagline{
+    margin-top:8px;
+    color:#87a99a;
+    font-size:13px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+/* Status */
+.status{
+    width:max-content;
+    margin:0 auto 28px;
+    padding:9px 17px;
+    border-radius:30px;
+    color:#35e594;
+    border:1px solid rgba(53,229,148,.25);
+    background:rgba(31,139,91,.08);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:1.2px;
+}
+
+.dot{
+    display:inline-block;
+    width:7px;
+    height:7px;
+    background:#35e594;
+    border-radius:50%;
+    margin-right:7px;
+    box-shadow:0 0 10px #35e594;
+}
+
+/* Hero */
+.hero{
+    text-align:center;
+}
+
+.hero h2{
+    font-size:29px;
+    line-height:1.18;
+    margin-bottom:15px;
+}
+
+.hero h2 span{
+    color:#27df8a;
+}
+
+.hero p{
+    color:#91ada2;
+    font-size:15px;
+    line-height:1.65;
+    max-width:430px;
+    margin:auto;
+}
+
+/* Features */
+.features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:28px;
+}
+
+.feature{
+    padding:21px 12px;
+    text-align:center;
+    background:rgba(12,35,26,.78);
+    border:1px solid rgba(65,170,120,.22);
+    border-radius:17px;
+}
+
+.feature .icon{
+    font-size:25px;
+    margin-bottom:9px;
+}
+
+.feature h3{
+    font-size:14px;
+}
+
+.feature p{
+    color:#78968a;
+    font-size:11px;
+    margin-top:5px;
+}
+
+/* Stats */
+.stats{
+    display:flex;
+    justify-content:space-around;
+    margin-top:18px;
+    padding:20px 8px;
+    border-radius:18px;
+    background:rgba(11,34,25,.75);
+    border:1px solid rgba(65,170,120,.20);
+}
+
+.stat{
+    text-align:center;
+}
+
+.stat strong{
+    display:block;
+    font-size:23px;
+    color:#2be28c;
+}
+
+.stat span{
+    display:block;
+    margin-top:5px;
+    color:#79968a;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+/* CTA */
+.cta{
+    display:block;
+    margin-top:22px;
+    padding:18px 20px;
+    border-radius:40px;
+    text-align:center;
+    text-decoration:none;
+    color:#032015;
+    font-size:18px;
+    font-weight:800;
+    background:linear-gradient(135deg,#2de695,#18b86d);
+    box-shadow:0 10px 35px rgba(31,220,132,.18);
+    transition:.2s;
+}
+
+.cta:hover{
+    transform:translateY(-2px);
+}
+
+.cta small{
+    display:block;
+    margin-top:5px;
+    font-size:11px;
+    font-weight:500;
+    opacity:.72;
+}
+
+/* Information */
+.info{
+    margin-top:25px;
+}
+
+.info-card{
+    padding:19px;
+    border-radius:17px;
+    background:#071c14;
+    border:1px solid rgba(65,170,120,.18);
+}
+
+.info-card h3{
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+.info-card p{
+    color:#8ca99e;
+    font-size:13px;
+    line-height:1.65;
+}
+
+.points{
+    margin-top:13px;
+}
+
+.points div{
+    padding:8px 0;
+    color:#a9c2b8;
+    font-size:13px;
+}
+
+.points span{
+    color:#2de695;
+    margin-right:7px;
+}
+
+/* Disclaimer */
+.disclaimer{
+    margin-top:22px;
+    text-align:center;
+    color:#607d71;
+    font-size:10px;
+    line-height:1.6;
+}
+
+.footer{
+    margin-top:22px;
+    text-align:center;
+    color:#49675b;
+    font-size:11px;
+}
+
+.footer strong{
+    color:#2acb80;
+}
+
+/* Desktop */
+@media(min-width:700px){
+    .page{
+        margin-top:30px;
+        margin-bottom:30px;
+        border-radius:28px;
+        border:1px solid rgba(50,200,130,.12);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="brand">
+        <div class="logo">↗</div>
+
+        <h1>Work<span>Vanta</span></h1>
+
+        <div class="tagline">
+            WORK WITHOUT INVESTMENT
+        </div>
+    </div>
+
+    <div class="status">
+        <span class="dot"></span>
+        CHANNEL ACTIVE
+    </div>
+
+    <section class="hero">
+
+        <h2>
+            Explore work opportunities
+            <span>without upfront investment</span>
+        </h2>
+
+        <p>
+            Get work updates, task information and complete process details
+            through our Telegram community.
+        </p>
+
+    </section>
+
+    <div class="features">
+
+        <div class="feature">
+            <div class="icon">💰</div>
+            <h3>No Upfront Investment</h3>
+            <p>Join and learn the process</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">📋</div>
+            <h3>Work Updates</h3>
+            <p>Regular opportunity updates</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">⚡</div>
+            <h3>Simple Process</h3>
+            <p>Clear step-by-step guidance</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">🔐</div>
+            <h3>Community Support</h3>
+            <p>Get information on Telegram</p>
+        </div>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat">
+            <strong>FREE</strong>
+            <span>TO JOIN</span>
+        </div>
+
+        <div class="stat">
+            <strong>24/7</strong>
+            <span>UPDATES</span>
+        </div>
+
+        <div class="stat">
+            <strong>100%</strong>
+            <span>INFORMATION</span>
+        </div>
+
+    </div>
+
+    <!-- Replace the # below with your Telegram channel link -->
+    <a class="cta" href="#" target="_blank" rel="noopener">
+        ✈️ Join Our Telegram
+        <small>Get the latest work updates & details</small>
+    </a>
+
+    <div class="info">
+
+        <div class="info-card">
+
+            <h3>Why join WorkVanta?</h3>
+
+            <p>
+                We share information about available work opportunities
+                and explain the process clearly so you can understand
+                the requirements before proceeding.
+            </p>
+
+            <div class="points">
+                <div><span>✓</span> No upfront joining fee</div>
+                <div><span>✓</span> Clear process information</div>
+                <div><span>✓</span> Regular Telegram updates</div>
+                <div><span>✓</span> Easy access to new opportunities</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="disclaimer">
+        Work opportunities, eligibility and earnings may vary depending
+        on the specific campaign or partner. No income or account approval
+        is guaranteed. Please review all requirements before proceeding.
+    </div>
+
+    <div class="footer">
+        © 2026 <strong>WorkVanta</strong> · Information & Opportunities
+    </div>
+
+</div>
+
+</body>
+</html>
