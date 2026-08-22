@@ -3,9 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#020b16">
+<meta name="theme-color" content="#05020d">
 
-<title>WorkVanta | Simple Tasks & Rewards</title>
+<title>Zero Investment Work India</title>
+
+<meta name="description"
+content="Zero Investment Work India - Work opportunities, task information and payment updates.">
 
 <style>
 *{
@@ -14,9 +17,13 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#020812;
+    background:#05020d;
     color:#fff;
     overflow-x:hidden;
 }
@@ -26,91 +33,240 @@ body{
     max-width:720px;
     min-height:100vh;
     margin:auto;
-    padding:24px 14px 32px;
+    padding:20px 12px 35px;
     position:relative;
     overflow:hidden;
 
     background:
-    radial-gradient(circle at 15% 10%,rgba(0,190,255,.16),transparent 28%),
-    radial-gradient(circle at 90% 35%,rgba(0,110,255,.18),transparent 30%),
-    linear-gradient(180deg,#031321,#020812 70%,#01060c);
+    radial-gradient(circle at 10% 5%,rgba(160,45,255,.22),transparent 28%),
+    radial-gradient(circle at 95% 30%,rgba(75,40,255,.20),transparent 30%),
+    linear-gradient(180deg,#0b0316 0%,#05020c 65%,#020107 100%);
 }
 
-/* HEADER */
+/* Background glow */
 
-.header{
+.glow{
+    position:absolute;
+    width:230px;
+    height:230px;
+    border-radius:50%;
+    background:#9b35ff;
+    filter:blur(95px);
+    opacity:.10;
+    pointer-events:none;
+}
+
+.glow.one{
+    top:100px;
+    left:-140px;
+}
+
+.glow.two{
+    top:560px;
+    right:-140px;
+}
+
+
+/* BRAND */
+
+.brand{
     text-align:center;
     position:relative;
     z-index:2;
 }
 
-.top-title{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:14px;
+.brand-title{
     font-size:18px;
-    font-weight:800;
-    letter-spacing:1.5px;
-}
-
-.line{
-    width:65px;
-    height:2px;
-    background:linear-gradient(90deg,transparent,#20d9ff);
-    box-shadow:0 0 12px #00cfff;
-}
-
-.main-title{
-    margin-top:5px;
-    font-size:50px;
-    line-height:1;
     font-weight:900;
-    letter-spacing:-2px;
+    letter-spacing:2px;
+}
+
+.brand-title span{
+    color:#c25cff;
+}
+
+.brand-line{
+    width:60px;
+    height:2px;
+    margin:8px auto 0;
+    background:#bd4cff;
+    box-shadow:0 0 13px #a82cff;
+}
+
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    margin-top:23px;
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+
+    padding:8px 14px;
+
+    border:1px solid rgba(193,84,255,.38);
+    border-radius:30px;
+
+    background:rgba(150,40,255,.08);
+    color:#d99bff;
+
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#c768ff;
+    box-shadow:0 0 10px #c768ff;
+}
+
+.hero h1{
+    margin-top:16px;
+
+    font-size:42px;
+    line-height:1.04;
+    font-weight:900;
+    letter-spacing:-1.5px;
 
     background:linear-gradient(
         180deg,
         #ffffff 0%,
-        #9df3ff 35%,
-        #19cfff 70%,
-        #0874ff 100%
+        #edc7ff 35%,
+        #bb60ff 70%,
+        #7020d1 100%
     );
 
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
 
-    filter:drop-shadow(0 0 15px rgba(0,190,255,.5));
+    filter:drop-shadow(0 0 15px rgba(178,60,255,.4));
 }
 
-/* TASK CARDS */
+.hero h1 span{
+    display:block;
+}
+
+.hero p{
+    max-width:500px;
+    margin:14px auto 0;
+
+    color:#a18fa9;
+    font-size:13px;
+    line-height:1.65;
+}
+
+
+/* BENEFITS */
+
+.benefits{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+
+    margin-top:23px;
+
+    position:relative;
+    z-index:2;
+}
+
+.benefit{
+    padding:17px 10px;
+    text-align:center;
+
+    border:1px solid rgba(184,79,255,.24);
+    border-radius:17px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(39,10,63,.92),
+        rgba(9,3,17,.98)
+    );
+
+    box-shadow:
+    inset 0 0 20px rgba(160,50,255,.05),
+    0 0 13px rgba(130,40,255,.08);
+}
+
+.benefit-icon{
+    width:42px;
+    height:42px;
+
+    margin:0 auto 8px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    background:linear-gradient(145deg,#c55eff,#7021d8);
+
+    font-size:20px;
+
+    box-shadow:0 0 15px rgba(180,60,255,.25);
+}
+
+.benefit h3{
+    font-size:12px;
+}
+
+.benefit p{
+    margin-top:5px;
+
+    color:#806e88;
+    font-size:9px;
+    line-height:1.4;
+}
+
+
+/* TASK SECTION */
+
+.section-title{
+    text-align:center;
+
+    margin:27px 0 12px;
+
+    color:#806e8d;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:2px;
+}
 
 .tasks{
-    margin-top:27px;
     position:relative;
     z-index:2;
 }
 
 .task{
     display:grid;
-    grid-template-columns:100px 1fr 145px;
-    min-height:78px;
-    margin-bottom:10px;
+    grid-template-columns:62px 1fr 120px;
 
-    border:2px solid #16cfff;
+    min-height:67px;
+    margin-bottom:9px;
+
+    border:1.5px solid #b448ff;
     border-radius:15px;
 
     background:
     linear-gradient(
         90deg,
-        rgba(0,100,190,.55),
-        rgba(2,18,34,.95),
-        rgba(0,120,210,.45)
+        rgba(91,18,158,.48),
+        rgba(15,4,27,.96),
+        rgba(76,13,144,.42)
     );
 
-    box-shadow:
-    0 0 16px rgba(0,190,255,.35),
-    inset 0 0 18px rgba(0,130,255,.12);
+    box-shadow:0 0 14px rgba(163,45,255,.22);
 
     overflow:hidden;
 }
@@ -119,351 +275,465 @@ body{
 .task-name,
 .task-reward{
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
 }
 
 .task-number{
-    font-size:42px;
+    font-size:28px;
     font-weight:900;
-    background:linear-gradient(110deg,#063b70,#087fd0);
-    border-right:2px solid #10c9ff;
+
+    background:rgba(111,23,184,.32);
+    border-right:1px solid rgba(191,77,255,.5);
 }
 
 .task-name{
-    font-size:36px;
+    font-size:25px;
     font-weight:900;
     font-style:italic;
 }
 
 .task-reward{
-    font-size:29px;
+    font-size:20px;
     font-weight:900;
-    font-style:italic;
-    background:linear-gradient(110deg,#087bc7,#06325c);
-    border-left:2px solid #10c9ff;
+
+    color:#d69aff;
+
+    background:rgba(105,20,190,.25);
+    border-left:1px solid rgba(191,77,255,.45);
 }
 
-/* REWARD PANEL */
 
-.reward-wrap{
-    max-width:590px;
-    margin:20px auto 0;
+/* PHONEPE PAYMENT PROOF */
+
+.payment-section{
+    margin-top:22px;
     position:relative;
     z-index:2;
 }
 
-.reward-panel{
-    padding:13px;
-    border:2px solid #12cfff;
-    border-radius:27px;
+.payment-card{
+    padding:14px;
+
+    border:1.5px solid rgba(185,75,255,.55);
+    border-radius:23px;
 
     background:
     linear-gradient(
         180deg,
-        rgba(4,25,42,.98),
-        rgba(1,9,17,.99)
+        rgba(31,7,49,.98),
+        rgba(8,2,15,.99)
     );
 
     box-shadow:
-    0 0 25px rgba(0,190,255,.35),
-    inset 0 0 25px rgba(0,140,255,.10);
+    0 0 25px rgba(160,40,255,.17),
+    inset 0 0 25px rgba(150,50,255,.05);
 }
 
-/* PANEL HEADER */
+.payment-header{
+    display:flex;
+    align-items:center;
+    gap:11px;
 
-.panel-header{
-    height:58px;
+    padding-bottom:13px;
+
+    border-bottom:1px solid rgba(184,75,255,.15);
+}
+
+.phonepe-logo{
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:linear-gradient(145deg,#7b2cff,#4c13b8);
+
+    color:#fff;
+
+    font-size:21px;
+    font-weight:900;
+
+    box-shadow:0 0 16px rgba(125,45,255,.4);
+}
+
+.payment-header h2{
+    font-size:15px;
+}
+
+.payment-header p{
+    margin-top:4px;
+    color:#806f8a;
+    font-size:9px;
+}
+
+
+/* PAYMENT IMAGE AREA */
+
+.proof-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+
+    padding-top:13px;
+}
+
+.proof{
+    border-radius:15px;
+    overflow:hidden;
+
+    border:1px solid rgba(188,75,255,.25);
+
+    background:#09030f;
+}
+
+.proof img{
+    display:block;
+    width:100%;
+    height:245px;
+
+    object-fit:cover;
+    object-position:top;
+
+    background:
+    linear-gradient(
+        145deg,
+        #120520,
+        #05020b
+    );
+}
+
+.proof-caption{
+    padding:9px;
+
+    color:#b99ac7;
+
+    font-size:9px;
+    text-align:center;
+}
+
+
+/* RECENT ACTIVITY */
+
+.activity{
+    margin-top:18px;
+
+    border:1px solid rgba(185,75,255,.28);
+    border-radius:19px;
+
+    background:rgba(15,4,24,.86);
+
+    overflow:hidden;
+}
+
+.activity-head{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 10px 10px;
-    border-bottom:1px solid rgba(0,210,255,.18);
+
+    padding:14px;
+
+    border-bottom:1px solid rgba(184,75,255,.14);
 }
 
-.panel-brand{
-    display:flex;
-    align-items:center;
-    gap:11px;
-}
-
-.menu{
-    font-size:23px;
-    color:#91a9b8;
-}
-
-.reward-logo{
-    width:41px;
-    height:41px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    border-radius:50%;
-
-    background:linear-gradient(145deg,#00dfff,#006cff);
-    color:white;
-
-    font-size:20px;
-    font-weight:900;
-
-    box-shadow:0 0 15px rgba(0,210,255,.4);
-}
-
-.panel-title{
-    font-size:16px;
+.activity-title{
+    font-size:13px;
     font-weight:800;
 }
 
-.notification{
-    font-size:20px;
-    color:#9eb1be;
-}
-
-/* REWARD ROW */
-
-.reward-row{
+.live{
     display:flex;
     align-items:center;
-    gap:11px;
-    min-height:76px;
-    border-bottom:1px solid rgba(0,170,255,.14);
+    gap:5px;
+
+    color:#54e77b;
+
+    font-size:9px;
+    font-weight:800;
 }
 
-.reward-row:last-child{
+.live-dot{
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:#45e96d;
+    box-shadow:0 0 8px #45e96d;
+}
+
+.activity-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    min-height:59px;
+    padding:8px 13px;
+
+    border-bottom:1px solid rgba(184,75,255,.08);
+}
+
+.activity-row:last-child{
     border-bottom:none;
 }
 
-.reward-icon{
-    width:43px;
-    height:43px;
-    flex:none;
+.activity-icon{
+    width:34px;
+    height:34px;
 
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
+
+    flex:none;
 
     border-radius:50%;
 
-    background:linear-gradient(145deg,#00dfff,#0065e8);
-    box-shadow:0 0 12px rgba(0,200,255,.3);
+    background:rgba(175,60,255,.12);
+    border:1px solid rgba(194,80,255,.28);
 
-    font-size:21px;
+    font-size:15px;
 }
 
-.reward-info{
+.activity-info{
     flex:1;
     min-width:0;
 }
 
-.reward-label{
-    color:#7894a5;
-    font-size:10px;
-    margin-bottom:3px;
-}
-
-.reward-title{
-    font-size:13px;
+.activity-name{
+    font-size:11px;
     font-weight:700;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
 }
 
-.reward-time{
-    color:#607888;
-    font-size:9px;
+.activity-time{
     margin-top:3px;
+
+    color:#66586f;
+    font-size:8px;
 }
 
-.reward-value{
-    color:#31e8ff;
-    font-size:16px;
+.activity-status{
+    color:#55e77a;
+    font-size:9px;
     font-weight:800;
-    white-space:nowrap;
 }
 
-.row-arrow{
-    color:#7f9baa;
-    font-size:21px;
-}
 
-/* CONTACT BUTTON */
+/* CTA */
 
-.contact{
-    width:88%;
-    min-height:75px;
-    margin:-2px auto 0;
-
-    padding:0 24px;
-
+.cta{
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 
-    background:#fff;
-    color:#081018;
+    width:92%;
+    min-height:72px;
 
-    border-radius:23px;
+    margin:20px auto 0;
+
+    padding:0 21px;
 
     position:relative;
     z-index:5;
 
     text-decoration:none;
 
+    color:#12071b;
+
+    background:#fff;
+
+    border-radius:22px;
+
     box-shadow:
-    0 8px 30px rgba(0,0,0,.45),
-    0 0 20px rgba(0,210,255,.15);
+    0 9px 30px rgba(0,0,0,.55),
+    0 0 22px rgba(190,70,255,.14);
 
     transition:.2s;
 }
 
-.contact:hover{
+.cta:hover{
     transform:translateY(-2px);
 }
 
-.contact-text{
-    font-size:21px;
-    font-weight:800;
+.cta:active{
+    transform:scale(.98);
 }
 
-.contact-arrow{
-    font-size:32px;
+.cta-left{
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
+
+.telegram{
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#229ed9;
+    color:#fff;
+
+    font-size:18px;
+}
+
+.cta-title{
+    font-size:16px;
+    font-weight:900;
+}
+
+.cta-sub{
+    margin-top:3px;
+    color:#756b7a;
+    font-size:9px;
+}
+
+.cta-arrow{
+    font-size:30px;
+}
+
 
 /* TRUST */
 
 .trust{
     display:grid;
     grid-template-columns:repeat(3,1fr);
+    gap:5px;
+
     margin-top:28px;
+
     position:relative;
     z-index:2;
 }
 
 .trust-item{
     text-align:center;
-    color:#8ba2ae;
-    font-size:10px;
-    font-weight:700;
+
+    color:#806f89;
+
+    font-size:9px;
+    font-weight:800;
     line-height:1.4;
 }
 
-.badge{
-    width:47px;
-    height:47px;
-    margin:0 auto 8px;
+.trust-icon{
+    width:43px;
+    height:43px;
+
+    margin:0 auto 7px;
 
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
 
     border-radius:50%;
-    border:2px solid #0bbfe9;
 
-    background:#031725;
-    color:#31e8ff;
+    border:1.5px solid #b04cff;
 
-    font-size:20px;
+    background:#130520;
+    color:#d395ff;
 
-    box-shadow:
-    0 0 13px rgba(0,200,255,.28),
-    inset 0 0 12px rgba(0,150,255,.1);
+    font-size:18px;
+
+    box-shadow:0 0 12px rgba(177,65,255,.15);
 }
+
 
 /* FOOTER */
 
 .footer{
-    margin-top:22px;
+    margin-top:23px;
+
     text-align:center;
 
-    color:#5f7581;
-    font-size:10px;
-    line-height:1.6;
+    color:#5e5266;
+
+    font-size:9px;
+    line-height:1.65;
 }
 
 .footer strong{
-    color:#1ed7f4;
+    color:#bd6bff;
 }
+
 
 /* MOBILE */
 
 @media(max-width:600px){
 
     .page{
-        padding:22px 11px 30px;
+        padding:19px 10px 30px;
     }
 
-    .top-title{
-        font-size:16px;
-        gap:9px;
+    .hero h1{
+        font-size:39px;
     }
 
-    .line{
-        width:45px;
-    }
-
-    .main-title{
-        font-size:44px;
+    .hero p{
+        font-size:12px;
     }
 
     .task{
-        grid-template-columns:72px 1fr 105px;
-        min-height:68px;
+        grid-template-columns:55px 1fr 100px;
+        min-height:64px;
     }
 
     .task-number{
-        font-size:35px;
+        font-size:25px;
     }
 
     .task-name{
-        font-size:28px;
+        font-size:22px;
     }
 
     .task-reward{
-        font-size:23px;
+        font-size:18px;
     }
 
-    .reward-panel{
-        border-radius:22px;
-        padding:10px;
+    .payment-card{
+        border-radius:20px;
+        padding:11px;
     }
 
-    .reward-row{
-        min-height:70px;
+    .proof img{
+        height:215px;
     }
 
-    .contact{
-        width:92%;
-        min-height:70px;
-        border-radius:21px;
+    .cta{
+        width:94%;
+        min-height:68px;
     }
 }
 
 @media(max-width:380px){
 
-    .main-title{
-        font-size:38px;
+    .hero h1{
+        font-size:35px;
     }
 
     .task{
-        grid-template-columns:60px 1fr 91px;
-    }
-
-    .task-number{
-        font-size:30px;
+        grid-template-columns:49px 1fr 88px;
     }
 
     .task-name{
-        font-size:23px;
-    }
-
-    .task-reward{
         font-size:19px;
     }
 
-    .reward-value{
-        font-size:13px;
+    .task-reward{
+        font-size:16px;
+    }
+
+    .proof-grid{
+        grid-template-columns:1fr;
+    }
+
+    .proof img{
+        height:330px;
     }
 }
 </style>
@@ -473,210 +743,408 @@ body{
 
 <div class="page">
 
-    <!-- HEADER -->
+<div class="glow one"></div>
+<div class="glow two"></div>
 
-    <header class="header">
 
-        <div class="top-title">
-            <span class="line"></span>
-            <span>SIMPLE TASKS</span>
-            <span class="line"></span>
+<!-- BRAND -->
+
+<header class="brand">
+
+    <div class="brand-title">
+        ZERO <span>INVESTMENT</span> WORK INDIA
+    </div>
+
+    <div class="brand-line"></div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="badge">
+        <span class="dot"></span>
+        ZERO INVESTMENT WORK
+    </div>
+
+    <h1>
+        Simple Tasks.
+        <span>Real Opportunities.</span>
+    </h1>
+
+    <p>
+        Explore available work opportunities, task information
+        and payment updates. Get complete information through
+        our Telegram community.
+    </p>
+
+</section>
+
+
+<!-- BENEFITS -->
+
+<section class="benefits">
+
+    <div class="benefit">
+
+        <div class="benefit-icon">₹</div>
+
+        <h3>No Upfront Investment</h3>
+
+        <p>
+            No upfront payment required to learn about the opportunity.
+        </p>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <div class="benefit-icon">✓</div>
+
+        <h3>Clear Information</h3>
+
+        <p>
+            Understand the work and requirements before proceeding.
+        </p>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <div class="benefit-icon">⚡</div>
+
+        <h3>Simple Process</h3>
+
+        <p>
+            Get step-by-step information through Telegram.
+        </p>
+
+    </div>
+
+
+    <div class="benefit">
+
+        <div class="benefit-icon">💳</div>
+
+        <h3>Payment Updates</h3>
+
+        <p>
+            Genuine payment updates can be shared here.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- TASKS -->
+
+<div class="section-title">
+    TASK & REWARD INFORMATION
+</div>
+
+
+<section class="tasks">
+
+    <div class="task">
+        <div class="task-number">1.</div>
+        <div class="task-name">TASK</div>
+        <div class="task-reward">₹500</div>
+    </div>
+
+    <div class="task">
+        <div class="task-number">2.</div>
+        <div class="task-name">TASK</div>
+        <div class="task-reward">₹1200</div>
+    </div>
+
+    <div class="task">
+        <div class="task-number">3.</div>
+        <div class="task-name">TASK</div>
+        <div class="task-reward">₹2000</div>
+    </div>
+
+</section>
+
+
+<!-- PHONEPE PAYMENT PROOF -->
+
+<section class="payment-section">
+
+    <div class="payment-card">
+
+        <div class="payment-header">
+
+            <div class="phonepe-logo">
+                पे
+            </div>
+
+            <div>
+
+                <h2>
+                    PhonePe Payment Proof
+                </h2>
+
+                <p>
+                    Genuine payment records only
+                </p>
+
+            </div>
+
         </div>
 
-        <div class="main-title">
-            WIN REWARDS
-        </div>
 
-    </header>
+        <div class="proof-grid">
 
+            <!-- Replace these filenames with your real screenshots -->
 
-    <!-- TASKS -->
+            <div class="proof">
 
-    <section class="tasks">
+                <img
+                    src="payment1.jpg"
+                    alt="PhonePe payment proof"
+                >
 
-        <div class="task">
-            <div class="task-number">1.</div>
-            <div class="task-name">TASK</div>
-            <div class="task-reward">= ₹500</div>
-        </div>
-
-        <div class="task">
-            <div class="task-number">2.</div>
-            <div class="task-name">TASK</div>
-            <div class="task-reward">= ₹1200</div>
-        </div>
-
-        <div class="task">
-            <div class="task-number">3.</div>
-            <div class="task-name">TASK</div>
-            <div class="task-reward">= ₹2000</div>
-        </div>
-
-    </section>
-
-
-    <!-- REWARD ACTIVITY -->
-
-    <section class="reward-wrap">
-
-        <div class="reward-panel">
-
-            <div class="panel-header">
-
-                <div class="panel-brand">
-
-                    <div class="menu">☰</div>
-
-                    <div class="reward-logo">🎁</div>
-
-                    <div class="panel-title">
-                        WorkVanta Rewards
-                    </div>
-
+                <div class="proof-caption">
+                    Payment Proof
                 </div>
-
-                <div class="notification">♧</div>
 
             </div>
 
 
-            <div class="reward-row">
+            <div class="proof">
 
-                <div class="reward-icon">🎁</div>
+                <img
+                    src="payment2.jpg"
+                    alt="PhonePe payment proof"
+                >
 
-                <div class="reward-info">
-                    <div class="reward-label">Reward Example</div>
-                    <div class="reward-title">Amazon Gift Voucher</div>
-                    <div class="reward-time">Check eligibility & task details</div>
+                <div class="proof-caption">
+                    Payment Proof
                 </div>
-
-                <div class="reward-value">₹500</div>
-
-                <div class="row-arrow">›</div>
 
             </div>
 
 
-            <div class="reward-row">
+            <div class="proof">
 
-                <div class="reward-icon">🎁</div>
+                <img
+                    src="payment3.jpg"
+                    alt="PhonePe payment proof"
+                >
 
-                <div class="reward-info">
-                    <div class="reward-label">Reward Example</div>
-                    <div class="reward-title">Amazon Gift Voucher</div>
-                    <div class="reward-time">Check eligibility & task details</div>
+                <div class="proof-caption">
+                    Payment Proof
                 </div>
-
-                <div class="reward-value">₹500</div>
-
-                <div class="row-arrow">›</div>
 
             </div>
 
 
-            <div class="reward-row">
+            <div class="proof">
 
-                <div class="reward-icon">🎁</div>
+                <img
+                    src="payment4.jpg"
+                    alt="PhonePe payment proof"
+                >
 
-                <div class="reward-info">
-                    <div class="reward-label">Reward Example</div>
-                    <div class="reward-title">Amazon Gift Voucher</div>
-                    <div class="reward-time">Check eligibility & task details</div>
+                <div class="proof-caption">
+                    Payment Proof
                 </div>
-
-                <div class="reward-value">₹500</div>
-
-                <div class="row-arrow">›</div>
-
-            </div>
-
-
-            <div class="reward-row">
-
-                <div class="reward-icon">🎁</div>
-
-                <div class="reward-info">
-                    <div class="reward-label">Reward Example</div>
-                    <div class="reward-title">Amazon Gift Voucher</div>
-                    <div class="reward-time">Check eligibility & task details</div>
-                </div>
-
-                <div class="reward-value">₹500</div>
-
-                <div class="row-arrow">›</div>
-
-            </div>
-
-
-            <div class="reward-row">
-
-                <div class="reward-icon">🎁</div>
-
-                <div class="reward-info">
-                    <div class="reward-label">Reward Example</div>
-                    <div class="reward-title">Amazon Gift Voucher</div>
-                    <div class="reward-time">Check eligibility & task details</div>
-                </div>
-
-                <div class="reward-value">₹500</div>
-
-                <div class="row-arrow">›</div>
 
             </div>
 
         </div>
 
-
-        <!-- TELEGRAM BUTTON -->
-
-        <a
-            class="contact"
-            href="https://t.me/mr_rizwanrs?text=I%20am%20interested"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <span class="contact-text">Contact us</span>
-            <span class="contact-arrow">›</span>
-        </a>
-
-    </section>
+    </div>
 
 
-    <!-- TRUST BADGES -->
+    <!-- ACTIVITY -->
 
-    <section class="trust">
+    <div class="activity">
 
-        <div class="trust-item">
-            <div class="badge">✓</div>
-            INFORMATION<br>FIRST
+        <div class="activity-head">
+
+            <div class="activity-title">
+                Recent Payment Activity
+            </div>
+
+            <div class="live">
+                <span class="live-dot"></span>
+                RECENT
+            </div>
+
         </div>
 
-        <div class="trust-item">
-            <div class="badge">🔒</div>
-            SECURE<br>PROCESS
+
+        <div class="activity-row">
+
+            <div class="activity-icon">₹</div>
+
+            <div class="activity-info">
+
+                <div class="activity-name">
+                    Payment Update
+                </div>
+
+                <div class="activity-time">
+                    Genuine record
+                </div>
+
+            </div>
+
+            <div class="activity-status">
+                VERIFIED
+            </div>
+
         </div>
 
-        <div class="trust-item">
-            <div class="badge">★</div>
-            TRUSTED &<br>RELIABLE
+
+        <div class="activity-row">
+
+            <div class="activity-icon">₹</div>
+
+            <div class="activity-info">
+
+                <div class="activity-name">
+                    Payment Update
+                </div>
+
+                <div class="activity-time">
+                    Genuine record
+                </div>
+
+            </div>
+
+            <div class="activity-status">
+                VERIFIED
+            </div>
+
         </div>
 
-    </section>
+
+        <div class="activity-row">
+
+            <div class="activity-icon">₹</div>
+
+            <div class="activity-info">
+
+                <div class="activity-name">
+                    Payment Update
+                </div>
+
+                <div class="activity-time">
+                    Genuine record
+                </div>
+
+            </div>
+
+            <div class="activity-status">
+                VERIFIED
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- DISCLAIMER -->
+<!-- TELEGRAM CTA -->
 
-    <footer class="footer">
+<a
+    class="cta"
+    href="https://t.me/ZeroInvestmentWorkIndia"
+    target="_blank"
+    rel="noopener noreferrer"
+>
 
-        WorkVanta provides work and opportunity information.<br>
+    <div class="cta-left">
 
-        <strong>
-            Rewards and eligibility depend on the specific task.
-        </strong><br>
+        <div class="telegram">
+            ➤
+        </div>
 
-        No guaranteed income or account approval is promised.
+        <div>
 
-    </footer>
+            <div class="cta-title">
+                I'm Interested
+            </div>
+
+            <div class="cta-sub">
+                Join ZeroInvestmentWorkIndia on Telegram
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="cta-arrow">
+        ›
+    </div>
+
+</a>
+
+
+<!-- TRUST -->
+
+<section class="trust">
+
+    <div class="trust-item">
+
+        <div class="trust-icon">
+            ✓
+        </div>
+
+        CLEAR<br>
+        INFORMATION
+
+    </div>
+
+
+    <div class="trust-item">
+
+        <div class="trust-icon">
+            🔒
+        </div>
+
+        SECURE<br>
+        PROCESS
+
+    </div>
+
+
+    <div class="trust-item">
+
+        <div class="trust-icon">
+            ★
+        </div>
+
+        RELIABLE<br>
+        SUPPORT
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    Zero Investment Work India provides work opportunity information.<br>
+
+    <strong>
+        Rewards and eligibility depend on the specific task.
+    </strong><br>
+
+    No guaranteed income or account approval is promised.
+
+</footer>
+
 
 </div>
 
