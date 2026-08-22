@@ -1,249 +1,957 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zero Investment Work</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07000d">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
+<title>ZeroInvestmentWorkIndia</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    background:#030006;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+.page{
+    width:100%;
+    max-width:700px;
+    margin:auto;
+    min-height:100vh;
+    padding:22px 18px 30px;
+    position:relative;
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at 5% 8%,rgba(190,40,255,.22),transparent 20%),
+    radial-gradient(circle at 100% 35%,rgba(110,20,255,.18),transparent 25%),
+    linear-gradient(180deg,#090011 0%,#030006 100%);
+}
+
+/* decorative glow */
+
+.page:before,
+.page:after{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:#a400ff;
+    filter:blur(85px);
+    opacity:.12;
+    pointer-events:none;
+}
+
+.page:before{
+    top:180px;
+    left:-100px;
+}
+
+.page:after{
+    top:520px;
+    right:-100px;
+}
+
+/* TOP */
+
+.top{
+    position:relative;
+    z-index:2;
+    text-align:center;
+}
+
+.top-line{
+    width:62px;
+    height:2px;
+    display:inline-block;
+    vertical-align:middle;
+    margin:0 12px 5px 0;
+    background:linear-gradient(90deg,transparent,#c84cff);
+    box-shadow:0 0 9px #c84cff;
+}
+
+.top-line.right{
+    margin:0 0 5px 12px;
+    background:linear-gradient(90deg,#c84cff,transparent);
+}
+
+.small-title{
+    display:inline-block;
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.main-title{
+    margin-top:6px;
+    font-size:64px;
+    line-height:.95;
+    font-weight:950;
+    letter-spacing:-3px;
+
+    background:linear-gradient(
+        180deg,
+        #fff 0%,
+        #f0b5ff 35%,
+        #c34dff 65%,
+        #7c1bc4 100%
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+
+    filter:drop-shadow(0 0 15px rgba(185,45,255,.5));
+}
+
+/* TASKS */
+
+.tasks{
+    position:relative;
+    z-index:2;
+    margin-top:20px;
+}
+
+.task{
+    display:grid;
+    grid-template-columns:145px 1fr 175px;
+
+    height:72px;
+    margin-bottom:10px;
+
+    border:2px solid #b94aff;
+    border-radius:14px;
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(91,19,145,.65),
+        rgba(14,3,23,.98),
+        rgba(77,14,139,.60)
+    );
+
+    box-shadow:
+    0 0 14px rgba(181,58,255,.28),
+    inset 0 0 20px rgba(150,40,255,.08);
+}
+
+.number{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:40px;
+    font-weight:900;
+
+    background:rgba(111,23,185,.30);
+
+    border-right:1px solid rgba(203,82,255,.7);
+}
+
+.task-name{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:34px;
+    font-weight:900;
+    font-style:italic;
+}
+
+.amount{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:30px;
+    font-weight:900;
+
+    background:rgba(99,18,170,.30);
+
+    border-left:1px solid rgba(203,82,255,.65);
+}
+
+/* PHONEPE PANEL */
+
+.payment{
+    position:relative;
+    z-index:2;
+
+    margin:18px auto 0;
+
+    width:92%;
+
+    border:2px solid #a83cff;
+    border-radius:28px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #13051d,
+        #06020a
+    );
+
+    box-shadow:
+    0 0 25px rgba(175,48,255,.25),
+    inset 0 0 25px rgba(150,40,255,.07);
+
+    overflow:hidden;
+}
+
+.phone-header{
+    height:65px;
+
+    display:flex;
+    align-items:center;
+    gap:13px;
+
+    padding:0 20px;
+
+    border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.menu{
+    color:#aaa;
+    font-size:26px;
+}
+
+.phone-logo{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#671fc4;
+
+    font-size:22px;
+    font-weight:900;
+
+    box-shadow:0 0 13px rgba(117,42,240,.45);
+}
+
+.phone-title{
+    font-size:22px;
+    font-weight:600;
+}
+
+.bell{
+    margin-left:auto;
+    color:#aaa;
+    font-size:22px;
+}
+
+/* DEMO LABEL */
+
+.demo{
+    text-align:center;
+
+    padding:7px 8px;
+
+    color:#aa8bb5;
+
+    font-size:9px;
+    letter-spacing:1px;
+
+    border-bottom:1px solid rgba(255,255,255,.04);
+}
+
+/* PAYMENT ROWS */
+
+.payment-row{
+    min-height:76px;
+
+    display:flex;
+    align-items:center;
+
+    gap:13px;
+
+    padding:8px 18px;
+
+    border-bottom:1px solid rgba(255,255,255,.055);
+}
+
+.payment-row:last-child{
+    border-bottom:0;
+}
+
+.pay-icon{
+    width:46px;
+    height:46px;
+
+    flex:none;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#641dc1;
+
+    font-size:21px;
+    font-weight:900;
+}
+
+.pay-info{
+    flex:1;
+    min-width:0;
+}
+
+.received{
+    color:#a9a0ad;
+    font-size:10px;
+    margin-bottom:3px;
+}
+
+.from{
+    font-size:13px;
+    font-weight:700;
+}
+
+.date{
+    margin-top:3px;
+    color:#766b7d;
+    font-size:9px;
+}
+
+.pay-amount{
+    color:#35e500;
+    font-size:19px;
+    font-weight:900;
+    white-space:nowrap;
+}
+
+.arrow{
+    color:#aaa;
+    font-size:24px;
+}
+
+/* TELEGRAM CTA */
+
+.cta{
+    position:relative;
+    z-index:5;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    width:88%;
+    min-height:70px;
+
+    margin:-2px auto 0;
+
+    padding:0 25px;
+
+    border-radius:21px;
+
+    background:#fff;
+
+    color:#111;
+
+    text-decoration:none;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.6),
+    0 0 20px rgba(175,55,255,.13);
+}
+
+.cta-left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.telegram{
+    width:39px;
+    height:39px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#229ed9;
+
+    color:#fff;
+
+    font-size:19px;
+}
+
+.cta-text{
+    font-size:18px;
+    font-weight:900;
+}
+
+.cta-sub{
+    margin-top:3px;
+    color:#777;
+    font-size:9px;
+}
+
+.cta-arrow{
+    font-size:32px;
+}
+
+/* BOTTOM */
+
+.bottom{
+    position:relative;
+    z-index:2;
+
+    display:flex;
+    justify-content:space-around;
+
+    margin-top:28px;
+}
+
+.bottom-item{
+    text-align:center;
+    color:#8e7d96;
+    font-size:10px;
+    font-weight:700;
+}
+
+.bottom-icon{
+    width:46px;
+    height:46px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 7px;
+
+    border:2px solid #9d3cda;
+    border-radius:50%;
+
+    background:#12051a;
+
+    color:#d188ff;
+
+    font-size:20px;
+
+    box-shadow:0 0 12px rgba(175,55,255,.17);
+}
+
+.footer{
+    position:relative;
+    z-index:2;
+
+    margin-top:18px;
+
+    text-align:center;
+
+    color:#5f5267;
+
+    font-size:8px;
+    line-height:1.5;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .page{
+        padding:17px 10px 24px;
     }
 
-    body {
-      background: #f5f6f8;
-      color: #222;
+    .top-line{
+        width:40px;
     }
 
-    .header {
-      background: #ffd814;
-      padding: 18px 20px;
-      text-align: center;
-      font-size: 22px;
-      font-weight: 700;
+    .small-title{
+        font-size:17px;
     }
 
-    .container {
-      max-width: 520px;
-      margin: 20px auto;
-      padding: 0 14px;
+    .main-title{
+        font-size:48px;
+        letter-spacing:-2px;
     }
 
-    .card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 22px 18px;
-      box-shadow: 0 3px 15px rgba(0,0,0,.08);
-      margin-bottom: 16px;
+    .task{
+        grid-template-columns:70px 1fr 112px;
+        height:61px;
     }
 
-    .badge {
-      display: inline-block;
-      background: #e9f8ed;
-      color: #188038;
-      padding: 7px 12px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 14px;
+    .number{
+        font-size:30px;
     }
 
-    h1 {
-      font-size: 27px;
-      line-height: 1.25;
-      margin-bottom: 10px;
+    .task-name{
+        font-size:25px;
     }
 
-    .subtitle {
-      color: #666;
-      font-size: 15px;
-      line-height: 1.55;
-      margin-bottom: 20px;
+    .amount{
+        font-size:21px;
     }
 
-    .features {
-      list-style: none;
+    .payment{
+        width:96%;
+        border-radius:22px;
     }
 
-    .features li {
-      padding: 12px 0;
-      border-bottom: 1px solid #eee;
-      font-size: 15px;
+    .phone-header{
+        height:55px;
+        padding:0 13px;
     }
 
-    .features li:last-child {
-      border-bottom: 0;
+    .phone-title{
+        font-size:17px;
     }
 
-    .cta {
-      display: block;
-      width: 100%;
-      background: #0088cc;
-      color: #fff;
-      text-decoration: none;
-      text-align: center;
-      padding: 15px;
-      border-radius: 9px;
-      font-size: 17px;
-      font-weight: 700;
-      margin-top: 18px;
+    .phone-logo{
+        width:36px;
+        height:36px;
+        font-size:18px;
     }
 
-    .cta:hover {
-      opacity: .9;
+    .payment-row{
+        min-height:61px;
+        padding:6px 11px;
+        gap:9px;
     }
 
-    .steps {
-      margin-top: 12px;
+    .pay-icon{
+        width:36px;
+        height:36px;
+        font-size:17px;
     }
 
-    .step {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 12px 0;
+    .received{
+        font-size:8px;
     }
 
-    .number {
-      min-width: 30px;
-      height: 30px;
-      background: #ffd814;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
+    .from{
+        font-size:10px;
     }
 
-    .step p {
-      font-size: 14px;
-      line-height: 1.5;
-      color: #555;
+    .date{
+        font-size:7px;
     }
 
-    .username {
-      margin-top: 10px;
-      text-align: center;
-      font-weight: 700;
-      color: #0088cc;
+    .pay-amount{
+        font-size:14px;
     }
 
-    .note {
-      text-align: center;
-      color: #777;
-      font-size: 12px;
-      line-height: 1.5;
-      margin-top: 18px;
+    .arrow{
+        font-size:19px;
     }
 
-    .footer {
-      text-align: center;
-      color: #888;
-      font-size: 12px;
-      padding: 10px 0 25px;
+    .cta{
+        width:92%;
+        min-height:62px;
+        padding:0 17px;
     }
-  </style>
+
+    .cta-text{
+        font-size:15px;
+    }
+
+    .bottom{
+        margin-top:21px;
+    }
+}
+
+@media(max-width:380px){
+
+    .main-title{
+        font-size:42px;
+    }
+
+    .task{
+        grid-template-columns:57px 1fr 94px;
+        height:56px;
+    }
+
+    .number{
+        font-size:27px;
+    }
+
+    .task-name{
+        font-size:21px;
+    }
+
+    .amount{
+        font-size:17px;
+    }
+
+    .payment-row{
+        min-height:55px;
+    }
+
+    .bottom-item{
+        font-size:8px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="header">
-    Zero Investment Work
-  </div>
+<div class="page">
 
-  <div class="container">
+    <!-- TOP -->
 
-    <div class="card">
+    <div class="top">
 
-      <span class="badge">LEARN & EXPLORE</span>
+        <span class="top-line"></span>
 
-      <h1>Explore Zero Investment Work Opportunities</h1>
+        <div class="small-title">
+            SIMPLE TASKS
+        </div>
 
-      <p class="subtitle">
-        Learn how the opportunity works, understand the process,
-        and get the complete details directly from our team.
-      </p>
+        <span class="top-line right"></span>
 
-      <ul class="features">
-        <li>✓ No upfront joining fee</li>
-        <li>✓ Simple step-by-step guidance</li>
-        <li>✓ Work from your phone</li>
-        <li>✓ Beginner-friendly process</li>
-        <li>✓ Direct support available</li>
-      </ul>
+        <div class="main-title">
+            WIN REWARDS
+        </div>
 
-      <a
+    </div>
+
+
+    <!-- TASKS -->
+
+    <div class="tasks">
+
+        <div class="task">
+
+            <div class="number">1.</div>
+
+            <div class="task-name">
+                TASK
+            </div>
+
+            <div class="amount">
+                = ₹500
+            </div>
+
+        </div>
+
+
+        <div class="task">
+
+            <div class="number">2.</div>
+
+            <div class="task-name">
+                TASK
+            </div>
+
+            <div class="amount">
+                = ₹1200
+            </div>
+
+        </div>
+
+
+        <div class="task">
+
+            <div class="number">3.</div>
+
+            <div class="task-name">
+                TASK
+            </div>
+
+            <div class="amount">
+                = ₹2000
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PHONEPE STYLE ACTIVITY -->
+
+    <div class="payment">
+
+        <div class="phone-header">
+
+            <div class="menu">☰</div>
+
+            <div class="phone-logo">पे</div>
+
+            <div class="phone-title">
+                PhonePe
+            </div>
+
+            <div class="bell">♧</div>
+
+        </div>
+
+
+        <div class="demo">
+            SAMPLE PAYMENT ACTIVITY — DEMO ONLY
+        </div>
+
+
+        <div class="payment-row">
+
+            <div class="pay-icon">
+                पे
+            </div>
+
+            <div class="pay-info">
+
+                <div class="received">
+                    Payment Activity
+                </div>
+
+                <div class="from">
+                    Sample Payment Entry
+                </div>
+
+                <div class="date">
+                    Reward Activity
+                </div>
+
+            </div>
+
+            <div class="pay-amount">
+                + ₹500
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </div>
+
+
+        <div class="payment-row">
+
+            <div class="pay-icon">
+                पे
+            </div>
+
+            <div class="pay-info">
+
+                <div class="received">
+                    Payment Activity
+                </div>
+
+                <div class="from">
+                    Sample Payment Entry
+                </div>
+
+                <div class="date">
+                    Reward Activity
+                </div>
+
+            </div>
+
+            <div class="pay-amount">
+                + ₹500
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </div>
+
+
+        <div class="payment-row">
+
+            <div class="pay-icon">
+                पे
+            </div>
+
+            <div class="pay-info">
+
+                <div class="received">
+                    Payment Activity
+                </div>
+
+                <div class="from">
+                    Sample Payment Entry
+                </div>
+
+                <div class="date">
+                    Reward Activity
+                </div>
+
+            </div>
+
+            <div class="pay-amount">
+                + ₹500
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </div>
+
+
+        <div class="payment-row">
+
+            <div class="pay-icon">
+                पे
+            </div>
+
+            <div class="pay-info">
+
+                <div class="received">
+                    Payment Activity
+                </div>
+
+                <div class="from">
+                    Sample Payment Entry
+                </div>
+
+                <div class="date">
+                    Reward Activity
+                </div>
+
+            </div>
+
+            <div class="pay-amount">
+                + ₹500
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </div>
+
+
+        <div class="payment-row">
+
+            <div class="pay-icon">
+                पे
+            </div>
+
+            <div class="pay-info">
+
+                <div class="received">
+                    Payment Activity
+                </div>
+
+                <div class="from">
+                    Sample Payment Entry
+                </div>
+
+                <div class="date">
+                    Reward Activity
+                </div>
+
+            </div>
+
+            <div class="pay-amount">
+                + ₹500
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TELEGRAM BUTTON -->
+
+    <a
         class="cta"
-        href="https://t.me/ZeroInvestmentWorkIndia?text=I'm%20interested%20in%20Zero%20Investment%20Work"
-        target="_blank">
-        💬 Get Complete Details
-      </a>
+        href="https://t.me/mr_rizwanrs?text=I%20am%20interested%20-%20Zero%20Investment%20Work"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
 
-      <div class="username">
-        @ZeroInvestmentWorkIndia
-      </div>
+        <div class="cta-left">
 
-    </div>
+            <div class="telegram">
+                ➤
+            </div>
 
+            <div>
 
-    <div class="card">
+                <div class="cta-text">
+                    Contact us
+                </div>
 
-      <h2>How It Works</h2>
+                <div class="cta-sub">
+                    Telegram • @mr_rizwanrs
+                </div>
 
-      <div class="steps">
+            </div>
 
-        <div class="step">
-          <div class="number">1</div>
-          <p>
-            Click on the button and message us on Telegram.
-          </p>
         </div>
 
-        <div class="step">
-          <div class="number">2</div>
-          <p>
-            Ask for the complete work details and process.
-          </p>
+        <div class="cta-arrow">
+            ›
         </div>
 
-        <div class="step">
-          <div class="number">3</div>
-          <p>
-            Our team will guide you through the next steps.
-          </p>
+    </a>
+
+
+    <!-- BOTTOM -->
+
+    <div class="bottom">
+
+        <div class="bottom-item">
+
+            <div class="bottom-icon">✓</div>
+
+            SIMPLE<br>
+            TASKS
+
         </div>
 
-      </div>
+
+        <div class="bottom-item">
+
+            <div class="bottom-icon">🔒</div>
+
+            SECURE<br>
+            PROCESS
+
+        </div>
+
+
+        <div class="bottom-item">
+
+            <div class="bottom-icon">★</div>
+
+            TRUSTED<br>
+            SUPPORT
+
+        </div>
 
     </div>
 
-
-    <div class="card">
-
-      <h2>Important Information</h2>
-
-      <p class="subtitle" style="margin-top:12px;margin-bottom:0;">
-        Please understand the work, eligibility and terms before
-        deciding whether it is suitable for you. Do not share
-        sensitive banking or identity documents unless officially
-        required through a verified process.
-      </p>
-
-    </div>
-
-    <div class="note">
-      Information is provided for educational and promotional purposes.
-      Results and opportunities may vary.
-    </div>
 
     <div class="footer">
-      © 2026 Zero Investment Work
+
+        ZeroInvestmentWorkIndia<br>
+        Work opportunity information. Rewards may vary by task.
+
     </div>
 
-  </div>
+</div>
 
 </body>
-</html>
+  </html>
