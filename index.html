@@ -1,10 +1,12 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="WorkVanta - Work opportunities without upfront investment. Join our Telegram community for updates and details.">
-<title>WorkVanta | Work Without Investment</title>
+<meta name="theme-color" content="#07000f">
+<meta name="description" content="WorkVanta - Simple tasks and work opportunities without upfront investment.">
+<title>WorkVanta | Simple Tasks & Rewards</title>
 
 <style>
 *{
@@ -13,261 +15,491 @@
     box-sizing:border-box;
 }
 
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#03130d;
-    color:#f3fff9;
-    min-height:100vh;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050009;
+    color:#fff;
+    overflow-x:hidden;
 }
 
 .page{
-    max-width:520px;
-    margin:auto;
+    width:100%;
+    max-width:720px;
     min-height:100vh;
-    padding:22px 18px 35px;
+    margin:auto;
+    padding:24px 18px 34px;
+    position:relative;
+    overflow:hidden;
+
     background:
-        radial-gradient(circle at 50% 0%, rgba(35,220,135,.16), transparent 32%),
-        linear-gradient(180deg,#031b12 0%,#03130d 55%,#020b07 100%);
+        radial-gradient(circle at 10% 15%,rgba(170,0,255,.22),transparent 25%),
+        radial-gradient(circle at 95% 25%,rgba(103,0,255,.25),transparent 24%),
+        radial-gradient(circle at 50% 90%,rgba(110,0,255,.18),transparent 28%),
+        linear-gradient(180deg,#0b0017 0%,#050009 55%,#09000f 100%);
 }
 
-/* Brand */
-.brand{
+.page:before,
+.page:after{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    filter:blur(70px);
+    background:#8b00ff;
+    opacity:.13;
+    pointer-events:none;
+}
+
+.page:before{
+    top:80px;
+    left:-100px;
+}
+
+.page:after{
+    top:520px;
+    right:-100px;
+}
+
+/* HEADER */
+
+.header{
     text-align:center;
-    padding:15px 0 25px;
+    position:relative;
+    z-index:2;
 }
 
-.logo{
-    width:62px;
-    height:62px;
-    margin:0 auto 16px;
-    border-radius:20px;
+.small-title{
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:28px;
-    background:#08291c;
-    border:1px solid rgba(45,235,145,.25);
-    box-shadow:0 0 30px rgba(32,220,130,.12);
-}
-
-.brand h1{
-    font-size:34px;
-    letter-spacing:-1px;
+    gap:16px;
+    font-size:18px;
     font-weight:800;
-}
-
-.brand h1 span{
-    color:#27df8a;
-}
-
-.tagline{
-    margin-top:8px;
-    color:#87a99a;
-    font-size:13px;
-    letter-spacing:3px;
-    text-transform:uppercase;
-}
-
-/* Status */
-.status{
-    width:max-content;
-    margin:0 auto 28px;
-    padding:9px 17px;
-    border-radius:30px;
-    color:#35e594;
-    border:1px solid rgba(53,229,148,.25);
-    background:rgba(31,139,91,.08);
-    font-size:12px;
-    font-weight:bold;
-    letter-spacing:1.2px;
-}
-
-.dot{
-    display:inline-block;
-    width:7px;
-    height:7px;
-    background:#35e594;
-    border-radius:50%;
-    margin-right:7px;
-    box-shadow:0 0 10px #35e594;
-}
-
-/* Hero */
-.hero{
-    text-align:center;
-}
-
-.hero h2{
-    font-size:29px;
-    line-height:1.18;
-    margin-bottom:15px;
-}
-
-.hero h2 span{
-    color:#27df8a;
-}
-
-.hero p{
-    color:#91ada2;
-    font-size:15px;
-    line-height:1.65;
-    max-width:430px;
-    margin:auto;
-}
-
-/* Features */
-.features{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin-top:28px;
-}
-
-.feature{
-    padding:21px 12px;
-    text-align:center;
-    background:rgba(12,35,26,.78);
-    border:1px solid rgba(65,170,120,.22);
-    border-radius:17px;
-}
-
-.feature .icon{
-    font-size:25px;
-    margin-bottom:9px;
-}
-
-.feature h3{
-    font-size:14px;
-}
-
-.feature p{
-    color:#78968a;
-    font-size:11px;
-    margin-top:5px;
-}
-
-/* Stats */
-.stats{
-    display:flex;
-    justify-content:space-around;
-    margin-top:18px;
-    padding:20px 8px;
-    border-radius:18px;
-    background:rgba(11,34,25,.75);
-    border:1px solid rgba(65,170,120,.20);
-}
-
-.stat{
-    text-align:center;
-}
-
-.stat strong{
-    display:block;
-    font-size:23px;
-    color:#2be28c;
-}
-
-.stat span{
-    display:block;
-    margin-top:5px;
-    color:#79968a;
-    font-size:10px;
     letter-spacing:1px;
 }
 
-/* CTA */
-.cta{
-    display:block;
-    margin-top:22px;
-    padding:18px 20px;
-    border-radius:40px;
-    text-align:center;
-    text-decoration:none;
-    color:#032015;
-    font-size:18px;
-    font-weight:800;
-    background:linear-gradient(135deg,#2de695,#18b86d);
-    box-shadow:0 10px 35px rgba(31,220,132,.18);
-    transition:.2s;
+.line{
+    width:70px;
+    height:2px;
+    background:linear-gradient(90deg,transparent,#c85cff);
+    box-shadow:0 0 10px #a900ff;
 }
 
-.cta:hover{
-    transform:translateY(-2px);
+.line.right{
+    transform:rotate(180deg);
 }
 
-.cta small{
-    display:block;
-    margin-top:5px;
-    font-size:11px;
-    font-weight:500;
-    opacity:.72;
+.main-title{
+    margin-top:4px;
+    font-size:50px;
+    line-height:1;
+    font-weight:900;
+    letter-spacing:-2px;
+
+    background:linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #efb4ff 30%,
+        #a932ff 65%,
+        #6715c7 100%
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+
+    filter:drop-shadow(0 0 14px rgba(175,40,255,.5));
 }
 
-/* Information */
-.info{
-    margin-top:25px;
+/* TASKS */
+
+.tasks{
+    margin-top:26px;
+    position:relative;
+    z-index:2;
 }
 
-.info-card{
-    padding:19px;
-    border-radius:17px;
-    background:#071c14;
-    border:1px solid rgba(65,170,120,.18);
-}
-
-.info-card h3{
-    font-size:16px;
+.task{
+    display:grid;
+    grid-template-columns:105px 1fr 150px;
+    min-height:78px;
     margin-bottom:10px;
+
+    border:2px solid #b951ff;
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(92,0,170,.42),
+            rgba(18,0,38,.9),
+            rgba(90,0,180,.45)
+        );
+
+    box-shadow:
+        0 0 12px rgba(163,35,255,.45),
+        inset 0 0 18px rgba(105,0,180,.16);
+
+    overflow:hidden;
 }
 
-.info-card p{
-    color:#8ca99e;
+.task-number,
+.task-name,
+.task-reward{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.task-number{
+    font-size:42px;
+    font-weight:900;
+    background:linear-gradient(110deg,#320060,#7d0bd1);
+    border-right:2px solid #a837f7;
+}
+
+.task-name{
+    font-size:37px;
+    font-weight:900;
+    font-style:italic;
+    letter-spacing:.5px;
+}
+
+.task-reward{
+    font-size:31px;
+    font-weight:900;
+    font-style:italic;
+    background:linear-gradient(110deg,#6509bb,#30005e);
+    border-left:2px solid #a837f7;
+}
+
+/* ACTIVITY */
+
+.activity-wrap{
+    margin:20px auto 0;
+    max-width:585px;
+    position:relative;
+    z-index:2;
+}
+
+.activity{
+    border:2px solid #a83eff;
+    border-radius:28px;
+    padding:14px 13px 16px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(17,0,35,.98),
+            rgba(5,0,13,.99)
+        );
+
+    box-shadow:
+        0 0 22px rgba(150,35,255,.48),
+        inset 0 0 25px rgba(120,0,220,.14);
+}
+
+/* ACTIVITY HEADER */
+
+.activity-head{
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 10px 10px;
+    border-bottom:1px solid rgba(174,72,255,.2);
+}
+
+.brand-left{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.menu{
+    font-size:24px;
+    color:#aaa;
+}
+
+.activity-icon{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:linear-gradient(145deg,#8d13f5,#4d008e);
+    font-size:20px;
+    font-weight:bold;
+    box-shadow:0 0 12px rgba(158,29,255,.4);
+}
+
+.activity-title{
+    font-size:16px;
+    font-weight:700;
+}
+
+.bell{
+    font-size:20px;
+}
+
+/* ACTIVITY ROWS */
+
+.activity-row{
+    display:flex;
+    align-items:center;
+    min-height:76px;
+    gap:11px;
+    border-bottom:1px solid rgba(150,70,210,.16);
+}
+
+.activity-row:last-child{
+    border-bottom:none;
+}
+
+.row-icon{
+    width:42px;
+    height:42px;
+    flex:none;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(145deg,#8d13f5,#4b008c);
+    font-size:19px;
+    font-weight:800;
+}
+
+.row-info{
+    flex:1;
+    min-width:0;
+}
+
+.row-label{
+    color:#aaa;
+    font-size:10px;
+    margin-bottom:3px;
+}
+
+.row-title{
     font-size:13px;
-    line-height:1.65;
+    font-weight:700;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
 
-.points{
-    margin-top:13px;
+.row-time{
+    margin-top:3px;
+    color:#888;
+    font-size:9px;
 }
 
-.points div{
-    padding:8px 0;
-    color:#a9c2b8;
-    font-size:13px;
+.row-amount{
+    color:#2cff3d;
+    font-size:17px;
+    font-weight:800;
 }
 
-.points span{
-    color:#2de695;
-    margin-right:7px;
+.arrow{
+    color:#aaa;
+    font-size:20px;
 }
 
-/* Disclaimer */
-.disclaimer{
+/* TELEGRAM CONTACT BUTTON */
+
+.contact{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    width:88%;
+    min-height:76px;
+    margin:-2px auto 0;
+
+    padding:0 25px;
+
+    background:#fff;
+    color:#111;
+
+    border-radius:24px;
+
+    position:relative;
+    z-index:5;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.45),
+        0 0 18px rgba(255,255,255,.12);
+
+    text-decoration:none;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.contact:hover{
+    transform:translateY(-2px);
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.5),
+        0 0 25px rgba(255,255,255,.2);
+}
+
+.contact:active{
+    transform:scale(.98);
+}
+
+.contact span:first-child{
+    font-size:21px;
+    font-weight:700;
+}
+
+.arrow-big{
+    font-size:31px;
+    font-weight:400;
+}
+
+/* TRUST */
+
+.trust{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:5px;
+    margin-top:30px;
+    position:relative;
+    z-index:2;
+}
+
+.trust-item{
+    text-align:center;
+    padding:12px 5px;
+    color:#a69aae;
+    font-size:10px;
+    font-weight:700;
+    line-height:1.35;
+    text-transform:uppercase;
+}
+
+.badge{
+    width:46px;
+    height:46px;
+    margin:0 auto 8px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:2px solid #9f38e8;
+    border-radius:50%;
+
+    background:#12001f;
+    color:#d67cff;
+
+    font-size:21px;
+
+    box-shadow:
+        0 0 12px rgba(155,35,255,.3),
+        inset 0 0 12px rgba(140,20,220,.18);
+}
+
+/* FOOTER */
+
+.bottom{
     margin-top:22px;
     text-align:center;
-    color:#607d71;
+    color:#796b82;
     font-size:10px;
     line-height:1.6;
 }
 
-.footer{
-    margin-top:22px;
-    text-align:center;
-    color:#49675b;
-    font-size:11px;
+.bottom strong{
+    color:#b866e8;
 }
 
-.footer strong{
-    color:#2acb80;
-}
+/* MOBILE */
 
-/* Desktop */
-@media(min-width:700px){
+@media(max-width:600px){
+
     .page{
-        margin-top:30px;
-        margin-bottom:30px;
-        border-radius:28px;
-        border:1px solid rgba(50,200,130,.12);
+        padding:22px 12px 30px;
+    }
+
+    .small-title{
+        font-size:16px;
+        gap:10px;
+    }
+
+    .line{
+        width:48px;
+    }
+
+    .main-title{
+        font-size:44px;
+    }
+
+    .task{
+        grid-template-columns:72px 1fr 105px;
+        min-height:67px;
+    }
+
+    .task-number{
+        font-size:35px;
+    }
+
+    .task-name{
+        font-size:28px;
+    }
+
+    .task-reward{
+        font-size:24px;
+    }
+
+    .activity{
+        border-radius:22px;
+        padding:10px;
+    }
+
+    .activity-row{
+        min-height:69px;
+    }
+
+    .contact{
+        width:92%;
+        min-height:70px;
+        border-radius:22px;
+    }
+}
+
+@media(max-width:380px){
+
+    .main-title{
+        font-size:38px;
+    }
+
+    .task{
+        grid-template-columns:60px 1fr 92px;
+    }
+
+    .task-number{
+        font-size:30px;
+    }
+
+    .task-name{
+        font-size:23px;
+    }
+
+    .task-reward{
+        font-size:20px;
+    }
+
+    .row-amount{
+        font-size:14px;
     }
 }
 </style>
@@ -277,122 +509,216 @@ body{
 
 <div class="page">
 
-    <div class="brand">
-        <div class="logo">↗</div>
+    <!-- HEADER -->
 
-        <h1>Work<span>Vanta</span></h1>
+    <header class="header">
 
-        <div class="tagline">
-            WORK WITHOUT INVESTMENT
+        <div class="small-title">
+            <span class="line"></span>
+            <span>SIMPLE TASKS</span>
+            <span class="line right"></span>
         </div>
-    </div>
 
-    <div class="status">
-        <span class="dot"></span>
-        CHANNEL ACTIVE
-    </div>
+        <div class="main-title">
+            WIN REWARDS
+        </div>
 
-    <section class="hero">
+    </header>
 
-        <h2>
-            Explore work opportunities
-            <span>without upfront investment</span>
-        </h2>
 
-        <p>
-            Get work updates, task information and complete process details
-            through our Telegram community.
-        </p>
+    <!-- TASKS -->
+
+    <section class="tasks">
+
+        <div class="task">
+            <div class="task-number">1.</div>
+            <div class="task-name">TASK</div>
+            <div class="task-reward">= ₹500</div>
+        </div>
+
+        <div class="task">
+            <div class="task-number">2.</div>
+            <div class="task-name">TASK</div>
+            <div class="task-reward">= ₹1200</div>
+        </div>
+
+        <div class="task">
+            <div class="task-number">3.</div>
+            <div class="task-name">TASK</div>
+            <div class="task-reward">= ₹2000</div>
+        </div>
 
     </section>
 
-    <div class="features">
 
-        <div class="feature">
-            <div class="icon">💰</div>
-            <h3>No Upfront Investment</h3>
-            <p>Join and learn the process</p>
-        </div>
+    <!-- ACTIVITY -->
 
-        <div class="feature">
-            <div class="icon">📋</div>
-            <h3>Work Updates</h3>
-            <p>Regular opportunity updates</p>
-        </div>
+    <section class="activity-wrap">
 
-        <div class="feature">
-            <div class="icon">⚡</div>
-            <h3>Simple Process</h3>
-            <p>Clear step-by-step guidance</p>
-        </div>
+        <div class="activity">
 
-        <div class="feature">
-            <div class="icon">🔐</div>
-            <h3>Community Support</h3>
-            <p>Get information on Telegram</p>
-        </div>
+            <div class="activity-head">
 
-    </div>
+                <div class="brand-left">
 
-    <div class="stats">
+                    <div class="menu">☰</div>
 
-        <div class="stat">
-            <strong>FREE</strong>
-            <span>TO JOIN</span>
-        </div>
+                    <div class="activity-icon">₹</div>
 
-        <div class="stat">
-            <strong>24/7</strong>
-            <span>UPDATES</span>
-        </div>
+                    <div class="activity-title">
+                        WorkVanta
+                    </div>
 
-        <div class="stat">
-            <strong>100%</strong>
-            <span>INFORMATION</span>
-        </div>
+                </div>
 
-    </div>
+                <div class="bell">♧</div>
 
-    <!-- Replace the # below with your Telegram channel link -->
-    <a class="cta" href="#" target="_blank" rel="noopener">
-        ✈️ Join Our Telegram
-        <small>Get the latest work updates & details</small>
-    </a>
+            </div>
 
-    <div class="info">
 
-        <div class="info-card">
+            <!-- These are informational task examples -->
 
-            <h3>Why join WorkVanta?</h3>
+            <div class="activity-row">
 
-            <p>
-                We share information about available work opportunities
-                and explain the process clearly so you can understand
-                the requirements before proceeding.
-            </p>
+                <div class="row-icon">₹</div>
 
-            <div class="points">
-                <div><span>✓</span> No upfront joining fee</div>
-                <div><span>✓</span> Clear process information</div>
-                <div><span>✓</span> Regular Telegram updates</div>
-                <div><span>✓</span> Easy access to new opportunities</div>
+                <div class="row-info">
+                    <div class="row-label">Task Information</div>
+                    <div class="row-title">Task details available</div>
+                    <div class="row-time">Check Telegram for details</div>
+                </div>
+
+                <div class="row-amount">₹500</div>
+
+                <div class="arrow">›</div>
+
+            </div>
+
+
+            <div class="activity-row">
+
+                <div class="row-icon">₹</div>
+
+                <div class="row-info">
+                    <div class="row-label">Task Information</div>
+                    <div class="row-title">Task details available</div>
+                    <div class="row-time">Check Telegram for details</div>
+                </div>
+
+                <div class="row-amount">₹500</div>
+
+                <div class="arrow">›</div>
+
+            </div>
+
+
+            <div class="activity-row">
+
+                <div class="row-icon">₹</div>
+
+                <div class="row-info">
+                    <div class="row-label">Task Information</div>
+                    <div class="row-title">Task details available</div>
+                    <div class="row-time">Check Telegram for details</div>
+                </div>
+
+                <div class="row-amount">₹500</div>
+
+                <div class="arrow">›</div>
+
+            </div>
+
+
+            <div class="activity-row">
+
+                <div class="row-icon">₹</div>
+
+                <div class="row-info">
+                    <div class="row-label">Task Information</div>
+                    <div class="row-title">Task details available</div>
+                    <div class="row-time">Check Telegram for details</div>
+                </div>
+
+                <div class="row-amount">₹500</div>
+
+                <div class="arrow">›</div>
+
+            </div>
+
+
+            <div class="activity-row">
+
+                <div class="row-icon">₹</div>
+
+                <div class="row-info">
+                    <div class="row-label">Task Information</div>
+                    <div class="row-title">Task details available</div>
+                    <div class="row-time">Check Telegram for details</div>
+                </div>
+
+                <div class="row-amount">₹500</div>
+
+                <div class="arrow">›</div>
+
             </div>
 
         </div>
 
-    </div>
 
-    <div class="disclaimer">
-        Work opportunities, eligibility and earnings may vary depending
-        on the specific campaign or partner. No income or account approval
-        is guaranteed. Please review all requirements before proceeding.
-    </div>
+        <!-- TELEGRAM -->
+        <!-- Opens @mr_rizwanrs with "I am interested" pre-filled -->
 
-    <div class="footer">
-        © 2026 <strong>WorkVanta</strong> · Information & Opportunities
+        <a
+            class="contact"
+            href="https://t.me/mr_rizwanrs?text=I%20am%20interested"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span>Contact us</span>
+            <span class="arrow-big">›</span>
+        </a>
+
+    </section>
+
+
+    <!-- TRUST BADGES -->
+
+    <section class="trust">
+
+        <div class="trust-item">
+            <div class="badge">✓</div>
+            INFORMATION<br>FIRST
+        </div>
+
+        <div class="trust-item">
+            <div class="badge">🔒</div>
+            SECURE<br>PROCESS
+        </div>
+
+        <div class="trust-item">
+            <div class="badge">★</div>
+            TRUSTED &<br>RELIABLE
+        </div>
+
+    </section>
+
+
+    <!-- DISCLAIMER -->
+
+    <div class="bottom">
+
+        WorkVanta provides work and opportunity information.<br>
+
+        <strong>
+            Rewards and eligibility depend on the specific task.
+        </strong><br>
+
+        No guaranteed income or account approval is promised.
+
     </div>
 
 </div>
 
 </body>
 </html>
+```
